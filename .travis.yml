@@ -18,8 +18,8 @@ script:
     - docker run -e CI=true macshild/docker-react npm run test
 
 
-  ######## Using Travis CI to Deploy to Elastic Beanstalk ########
-  deploy:
+######## Using Travis CI to Deploy to Elastic Beanstalk ########
+deploy:
     ##fix for missing bucket_name error
     edge: true
 
