@@ -22,6 +22,9 @@ RUN npm run build
 #specify base image for run phase
 FROM nginx
 
+#expose port to elastic beanstalk
+EXPOSE 80
+
 #specify files to copy from build phase to run phase
 COPY --from=builder /app/build /usr/share/nginx/html
 
