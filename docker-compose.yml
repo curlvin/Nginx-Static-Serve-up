@@ -1,0 +1,52 @@
+#specify version
+version: '3'
+
+#specify containers to run
+services:
+
+    #container name
+    react_app:
+        #specify build contex of image for container
+        build:
+            context: .
+            dockerfile: Dockerfile.dev 
+
+        #specify port mapping
+        ports: 
+            - "8080:3000"
+        
+        #specify volume mapping
+        volumes:
+            - /app/node_modules 
+            - .:/app
+
+    #test container name
+    test:
+        #specify build context of image for container
+        build: 
+            context: .
+            dockerfile: Dockerfile.dev
+
+        #specify volume mapping
+        volumes: 
+            - /app/node_modules
+            - .:/app
+
+        #specify override command to start test
+        command: ["npm","run","test"]
+
+    
+    #specify production container
+    #container name
+    react_prod_app_with_nginx_server:
+        #specify build contex of image for container
+        build:
+            context: .
+            dockerfile: Dockerfile
+
+        #specify port mapping
+        ports: 
+            - "9000:80"
+    
+    
+

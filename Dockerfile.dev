@@ -1,0 +1,17 @@
+#specify base image from docker hub
+FROM node:alpine
+
+#specify workdir in image
+WORKDIR /app
+
+#copy config files from local to workdir
+COPY ./package.json .
+
+#install dependencies
+RUN npm install
+
+#copy everthing else from local to workdir
+COPY . .
+
+#specify start up command
+CMD ["npm","run","start"]
