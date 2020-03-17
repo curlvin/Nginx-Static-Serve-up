@@ -21,7 +21,7 @@ script:
   ######## Using Travis CI to Deploy to Elastic Beanstalk ########
   deploy:
     ##fix for missing bucket_name error
-    ##edge: true
+    edge: true
 
     #specify name of hosting service
     provider: elasticbeanstalk
