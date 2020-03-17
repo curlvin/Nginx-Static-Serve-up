@@ -15,7 +15,7 @@ before_install:
 #specify instructions for running test suite container
 script:
    # - docker run macshild/nginx-static-serve-up-test npm run test -- --coverage
-    - docker run -e CI=true macshild/docker-react npm run test
+    - docker run -e CI=true macshild/nginx-static-serve-up-test npm run test
 
 
 ######## Using Travis CI to Deploy to Elastic Beanstalk ########
